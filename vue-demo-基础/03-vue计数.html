@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue计数</title>
+    <script src="node_modules/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <h1>当前计数：{{count}}</h1>
+    <button v-on:click="reduce()">-</button>
+    <button @click="add()">+</button>
+</div>
+<script>
+    const vueApp=new Vue({
+        el:"#app",
+        data:{
+            count:0
+        },
+        methods:{
+            reduce:function () {
+                this.count--
+            },
+            add:function () {
+                this.count++
+            }
+        }
+    })
+</script>
+</body>
+</html>

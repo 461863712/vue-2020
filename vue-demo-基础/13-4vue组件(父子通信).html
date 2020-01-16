@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>title</title>
+  <script src="node_modules/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="app">
+  <!--2传值-->
+  <cpn :cmovies="movies" :message="msg"></cpn>
+  <cpn :cmovies="movies"></cpn>
+</div>
+
+<template id="cpn">
+  <div>
+    <!--4.调用-->
+    <ul>
+      <li v-for="item in cmovies">{{item}}</li>
+    </ul>
+    {{cmovies}}-{{message}}
+  </div>
+</template>
+
+<script>
+  <!--父传子 props-->
+  const cpn= Vue.extend({
+    template: `#cpn`,
+    //3.接收
+    // props:['cmovies',"message"]
+    props:{
+      //类型的限制，可以提供默认的值
+      cmovies:{
+        type: Array,
+        // default() {
+        //   return []
+        // },
+        //required:true必须传值
+        required:true
+      },
+      message:{
+        type:String,
+        //default默认值
+        default:"aaa",
+      }
+    }
+  });
+
+  const vueApp = new Vue({
+    el: "#app",
+    data: {
+      msg: "Hello",
+      //1.数据
+      movies:["海王","龙珠","一夜"]
+    },
+    components: {
+      cpn
+    }
+  })
+</script>
+</body>
+</html>

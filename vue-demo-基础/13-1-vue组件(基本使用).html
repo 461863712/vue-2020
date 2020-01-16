@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>title</title>
+  <script src="node_modules/vue/dist/vue.js"></script>
+</head>
+<body>
+
+<div id="app">
+  <!--3.使用组件-->
+  <cpn></cpn>
+</div>
+
+<script>
+  //1.定义组件
+  const  conc = Vue.extend({
+    template: `
+      <div>
+        <h2>标题</h2>
+        <p>内容</p>
+        <p>呵呵呵呵</p>
+      </div>`
+  });
+  //2.注册组件(全局组件)
+  // Vue.component('cpn',conc);
+
+  const vueApp = new Vue({
+    el: "#app",
+    data: {
+      msg: "Hello"
+    },
+    //2.注册组件(局部组件)
+    components: {
+      cpn:conc
+    }
+  })
+</script>
+
+</body>
+</html>

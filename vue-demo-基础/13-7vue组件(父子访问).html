@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="node_modules/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="app">
+  <cpn ref="aaa"></cpn>
+  <button @click="btnClick">按钮</button>
+</div>
+
+<template id="cpn">
+  <div>子</div>
+</template>
+<script>
+  new Vue({
+    el:"#app",
+    data:{
+
+    },
+    methods:{
+      btnClick(){
+        //$children返回是数组
+        for (let i = 0; i < this.$children.length; i++) {
+          this.$children[i].showMsg();
+          console.log(this.$children[i].name);
+        }
+        //$refs对象，默认空对象，需要在组件加入ref=""属性
+        //aaa是ref的值
+        console.log(this.$refs.aaa.name);
+      }
+    },
+    components:{
+      cpn:{
+        template:'#cpn',
+        data(){
+          return {
+            name:"子组件"
+          }
+        },
+        methods:{
+          showMsg(){
+            console.log("showMsg")
+          }
+        }
+      }
+    }
+  })
+</script>
+</body>
+</html>

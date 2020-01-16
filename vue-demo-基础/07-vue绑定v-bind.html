@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>title</title>
+  <script src="node_modules/vue/dist/vue.js"></script>
+</head>
+<style>
+  .active{
+    color: red;
+  }
+</style>
+<body>
+<div id="app">
+  {{msg}}
+  <img v-bind:src="src" />
+  <img :src="src" />
+  <a :href="url">百度一下</a>
+
+  <h1 :class="active1">active1</h1>
+  <h1 :class="{active:isActive}" @click="click">active</h1>
+
+  <h1 :class="[active1]">active1</h1>
+
+  <h1 :style="{background:background,color:color}">background</h1>
+  <h1 :style="[baseStyle1,baseStyle2]">background</h1>
+</div>
+<script>
+  const vueApp = new Vue({
+    el: "#app",
+  data: {
+      msg: "Hello",
+      src:"https://gw.alicdn.com/tfs/TB1PzwKepP7gK0jSZFjXXc5aXXa-1200-120.jpg",
+      url:"http://www.baidu.com",
+      active1:"active",
+      isActive:true,
+      background:"red",
+      color:"white",
+      baseStyle1:{background:'red'},
+      baseStyle2:{color:'white'}
+    },
+    methods:{
+      click:function () {
+        this.isActive = !this.isActive;
+      }
+    }
+  })
+</script>
+</body>
+</html>

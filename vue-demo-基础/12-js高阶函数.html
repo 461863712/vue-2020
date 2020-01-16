@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+<script>
+  //filter过滤：只能返回布朗值
+  const nums=[10,20,111,222,30,400,52];
+  let newNums=nums.filter(function (n) {
+    return n<100
+  })
+  console.log(newNums);
+
+  //map过滤：返回设定的值
+  var mapNum=newNums.map(function (n) {
+    return n*2
+  });
+  console.log(mapNum)
+
+  //reduce:所有内容汇总
+  /**
+   * preValue 前一个返回值
+   * n 当前值
+   */
+  var reduce=mapNum.reduce(function (preValue,n) {
+    return preValue+n
+  },0);
+  console.log(reduce)
+</script>
+</body>
+</html>

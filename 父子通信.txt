@@ -1,0 +1,32 @@
+一、
+//父传子props
+//传值
+:cmovies="movies" :message="msg"
+//接收父组件的值
+props:{
+      //类型的限制，可以提供默认的值
+      cmovies:{
+        type: Array,
+        // default() {
+        //   return []
+        // },
+        //required:true必须传值
+        required:true
+      },
+      message:{
+        type:String,
+        //default默认值
+        default:"aaa",
+      }
+}
+
+
+
+二、
+//子传父通过事件
+btnClick(item){
+        //发送自定义事件，itemclick驼峰会出错
+        this.$emit('item-click',item)
+}
+//父组件事件接收
+@item-click="cpnClick"

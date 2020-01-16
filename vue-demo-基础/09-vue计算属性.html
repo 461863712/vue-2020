@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>title</title>
+  <script src="node_modules/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="app">
+  <h1>{{name1 + " " + name2}}</h1>
+  <h1>{{name1}} {{name2}}</h1>
+
+  <h1>{{getFullName()}}</h1>
+
+  <h1>{{fullName}}</h1>
+  <h1>总价格: {{totalPrc}}</h1>
+
+  <h1>{{fullNameW}}</h1>
+</div>
+<script>
+  const vueApp = new Vue({
+    el: "#app",
+    data: {
+      name1: "科比",
+      name2: "詹姆斯",
+      books: [
+        {id: 1, name: "语文", prc: 15},
+        {id: 2, name: "数学", prc: 17},
+        {id: 3, name: "英语", prc: 14},
+      ]
+    },
+    methods: {
+      getFullName() {
+        return this.name1 + " " + this.name2
+      }
+    },
+    //计算属性
+    computed: {
+      fullName:function () {
+        return this.name1 + " " + this.name2
+      },
+      totalPrc:function () {
+        let result = 0;
+        for (let i = 0; i < this.books.length; i++) {
+          result += this.books[i].prc;
+        }
+        return result;
+      },
+      //完整计算属性写法
+      fullNameW: {
+        //set一般不用
+        //fullNameW = "科比 詹姆斯"
+        set: function (newValue) {
+          const names = newValue.split(" ");
+          this.name1 = names[0];
+          this.name2 = names[1];
+        },
+        get: function () {
+          return this.name1 + " " + this.name2
+        }
+      }
+    }
+  })
+</script>
+</body>
+</html>

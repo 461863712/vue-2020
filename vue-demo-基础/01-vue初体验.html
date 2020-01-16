@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue初体验</title>
+    <script src="node_modules/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <p>{{msg}}</p>
+</div>
+<script>
+    const  appVue = new Vue({
+        el:"#app",
+        data:{
+            msg:"aa"
+        }
+    })
+</script>
+</body>
+</html>

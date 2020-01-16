@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>title</title>
+  <script src="node_modules/vue/dist/vue.js"></script>
+</head>
+<style>
+  li{
+    cursor: pointer;
+  }
+  .active{
+    color: red;
+  }
+</style>
+<body>
+<div id="app">
+  <ul>
+    <li :class="{active:i===index}" v-for="(item,index) in list" @click="active(index)">{{item}}</li>
+  </ul>
+</div>
+<script>
+  const vueApp = new Vue({
+    el: "#app",
+    data: {
+      list:['星际穿越','大话西游','少年派','盗梦空间'],
+      i:0
+    },
+    methods: {
+      active:function (index) {
+        this.i=index;
+      }
+    }
+  })
+</script>
+</body>
+</html>

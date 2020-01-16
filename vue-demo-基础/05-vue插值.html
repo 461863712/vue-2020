@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>vue插值</title>
+  <script src="node_modules/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="app">
+  <h1>{{msg}}</h1>
+  <h1>{{msg + ' ' + mag}}</h1>
+  <h1>{{msg}} {{mag}}</h1>
+  <h1>{{mag}}</h1>
+</div>
+<script>
+  const vueApp = new Vue({
+    el: "#app",
+    data: {
+      msg: "Hello",
+      mag: "World"
+    }
+  })
+</script>
+</body>
+</html>

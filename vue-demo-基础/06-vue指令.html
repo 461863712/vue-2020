@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>title</title>
+  <script src="node_modules/vue/dist/vue.js"></script>
+</head>
+<body>
+<!--v-cloak:Vue实例没有出来,不会渲染显示-->
+<div id="app" v-cloak>
+  <h1>{{msg}}</h1>
+  <!--v-once:只渲染一次-->
+  <h1 v-once>{{msg}}</h1>
+  <h1 v-html="html"></h1>
+  <h1 v-text="msg"></h1>
+  <!--v-pre:不解析，展示原始-->
+  <h1 v-pre>{{msg}}</h1>
+
+  <button @click="btn1Click">按钮1</button>
+  <button @click="btn2Click(123)">按钮2</button>
+  <button @click="btn3Click">按钮3</button>
+  <button @click="btn4Click(123,$event)">按钮4</button>
+
+  <!--修饰符-->
+  <div @click="divClick">
+    aaaaa
+    <!--stop阻止事件冒泡-->
+    <button @click.stop="btnClick">stop</button>
+  </div>
+  <form action="baidu">
+    <!--prevent阻止默认提交-->
+    <input type="submit" value="提交" @click.prevent="subClick">
+  </form>
+  <!--键盘按键-->
+  <input type="text" @keyup.enter="keyup">
+  <!--自定义主键-->
+  <!--<cpn @click.native="cpn">cpn</cpn>-->
+  <h1 @click.once="once">once</h1>
+
+  <h1 v-if="isShow">true</h1>
+  <h1 v-if="!isShow">false</h1>
+
+  <h1 v-show="isShow">show</h1>
+
+  <ul>
+    <li v-for="(item,index) in list">{{index+1}}.{{item}}</li>
+  </ul>
+  <ul>
+    <li v-for="(value,key) in info">{{key}}:{{value}}</li>
+  </ul>
+
+  <div>
+    {{msg}}
+    <input type="text" v-model="msg">
+  </div>
+  <div>
+    <label for="main">男</label>
+    <input id="main" type="radio" value="男" v-model="sex">
+    <label for="female">女</label>
+    <input id="female" type="radio" value="女" v-model="sex">
+    {{sex}}
+  </div>
+  <div>
+    <label><input type="checkbox" value="agree" v-model="isAgree">同意协议</label>
+    {{isAgree}}
+  </div>
+  <div>
+    <input type="checkbox" value="篮球" v-model="hobbies">篮球
+    <input type="checkbox" value="足球" v-model="hobbies">足球
+    <input type="checkbox" value="乒乓球" v-model="hobbies">乒乓球
+    <input type="checkbox" value="羽毛球" v-model="hobbies">羽毛球
+    爱好：{{hobbies}}
+  </div>
+  <div>
+    <select name="abc" v-model="fruit">
+      <option value="苹果">苹果</option>
+      <option value="香蕉">香蕉</option>
+      <option value="橘子">橘子</option>
+      <option value="梨子">梨子</option>
+      <option value="榴莲">榴莲</option>
+    </select>
+    {{fruit}}
+  </div>
+  <div>
+    <select name="def" v-model="fruits" multiple>
+      <option value="苹果">苹果</option>
+      <option value="香蕉">香蕉</option>
+      <option value="橘子">橘子</option>
+      <option value="梨子">梨子</option>
+      <option value="榴莲">榴莲</option>
+    </select>
+    {{fruits}}
+  </div>
+
+  <div>
+    <label v-for="item in orginHobbies">
+      <input type="checkbox" :value="item" v-model="orginHobbie">{{item}}
+    </label>
+    {{orginHobbie}}
+  </div>
+  <div>
+    <!--lazy失去焦点才绑定-->
+    <input type="text" v-model.lazy="msg">
+    <h1>{{msg}}</h1>
+    <!--number类型-->
+    <input type="number" v-model="age">
+    <h1>{{age}}-{{typeof age}}</h1>
+    <input type="number" v-model.number="age">
+    <h1>{{age}}-{{typeof age}}</h1>
+    <!--trim去除左右空格-->
+    <input type="text" v-model.trim="name">
+    <h1>{{name}}</h1>
+  </div>
+</div>
+<script>
+  const vueApp = new Vue({
+    el: "#app",
+    data: {
+      msg: "Hello",
+      html:"<a href='http://www.baidu.com'>百度一下</a>",
+      isShow:true,
+      list:["aaaa","bbbb","cccc","dddd"],
+      info:{
+        name:"qq",
+        age:10,
+        height:1.88
+      },
+      sex:'男',
+      isAgree:false,
+      hobbies:[],
+      fruit:"香蕉",
+      fruits:[],
+      orginHobbies:['篮球','排球','足球'],
+      orginHobbie:[],
+      age:10,
+      name:"sss"
+    },
+    methods: {
+      btn1Click:function () {
+        console.log("btn1Click")
+      },
+      btn2Click:function (abc) {
+        console.log(abc)
+      },
+      btn3Click:function (abc) {
+        //这时候没有传入参数，abc是event
+        console.log(abc)
+      },
+      btn4Click:function (abc, e) {
+        //$event
+        console.log(abc,e)
+      },
+      divClick(){
+        console.log("div");
+      },
+      btnClick(){
+        console.log("btn");
+      },
+      subClick(){
+        console.log("prevent")
+      },
+      keyup(){
+        console.log("keyup")
+      },
+      // cpn(){
+      //   console.log("cpn")
+      // }
+      once(){
+        console.log("once");
+      }
+    }
+  })
+</script>
+</body>
+</html>

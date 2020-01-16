@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<button>1</button>
+<button>2</button>
+<button>3</button>
+<button>4</button>
+<button>5</button>
+<script>
+  /**
+   * ES5 var 没有块级作用域
+   * /
+  // var button = document.getElementsByTagName("button");
+  // for (var i = 0; i < button.length; i++) {
+  //   (function (i) {
+  //     button[i].addEventListener("click",function () {
+  //       console.log(i);
+  //     })
+  //   })(i)
+  // }
+
+  /**
+   * ES6 let 有块级作用域
+   */
+  var button1 = document.getElementsByTagName("button");
+  for (let j = 0; j < button1.length; j++) {
+    button1[j].addEventListener("click",function () {
+      console.log(j);
+    })
+  }
+  /**
+   * ES6 const
+   * 不能修改
+   * 必须赋值
+   * 可以改对象内部得属性值
+   */
+  const name="ss";
+  const obj = {
+    name: "aa",
+    age: 10
+  }
+  obj.name = "bb";
+</script>
+</body>
+</html>
