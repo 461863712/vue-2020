@@ -1,19 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b0d6ef85-ee03-4ab2-b43d-e7ed94f1751f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/learnvuerouter/src/components/Profile.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/learnvuerouter/src/components/home/Message.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/learnvuerouter/src/components/home/News.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/learnvuerouter/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/learnvuerouter/src/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/learnvuerouter/src/components/About.vue" beforeDir="false" afterPath="$PROJECT_DIR$/learnvuerouter/src/components/About.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/learnvuerouter/src/components/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/learnvuerouter/src/components/Home.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/learnvuerouter/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/learnvuerouter/src/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/learnvuerouter/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/learnvuerouter/src/router/index.js" afterDir="false" />
-    </list>
+    <list default="true" id="b0d6ef85-ee03-4ab2-b43d-e7ed94f1751f" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,8 +55,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/learnvuerouter/src/components/Profile.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="418">
-              <caret line="19" column="5" lean-forward="true" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
+            <state relative-caret-position="154">
+              <caret line="7" column="8" lean-forward="true" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="8" />
             </state>
           </provider>
         </entry>
@@ -160,7 +148,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1579244816376" />
     <property name="editor.config.ad.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../tabar" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -201,16 +189,15 @@
       <workItem from="1579163831436" duration="3363000" />
       <workItem from="1579222826871" duration="9184000" />
       <workItem from="1579394786479" duration="10827000" />
-      <workItem from="1579481777865" duration="620000" />
+      <workItem from="1579481777865" duration="1101000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="34364000" />
+    <option name="totallyTimeSpent" value="34845000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1025" y="0" width="895" height="1047" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1988024" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -326,8 +313,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/learnvuerouter/src/components/Profile.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="19" column="5" lean-forward="true" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
+        <state relative-caret-position="154">
+          <caret line="7" column="8" lean-forward="true" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="8" />
         </state>
       </provider>
     </entry>
