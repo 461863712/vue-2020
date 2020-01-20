@@ -1,13 +1,16 @@
 <template>
   <div>
-    <h2>我是关于</h2>
-    <p>呵呵呵</p>
+    <ul>
+      <li>消息</li>
+      <li>消息</li>
+      <li>消息</li>
+    </ul>
   </div>
 </template>
 
 <script>
   export default {
-    name: "About",
+    name: "Message"
   }
 </script>
 

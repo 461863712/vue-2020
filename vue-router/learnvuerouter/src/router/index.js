@@ -8,8 +8,12 @@ import Router from 'vue-router'
  * component: () => import('../components/Home')
  */
 const Home=() => import('../components/Home')
+const News=() => import('../components/home/News')
+const Message=() => import('../components/home/Message')
+
 const About=() => import('../components/About')
 const User=() => import('../components/User')
+const Profile=() => import('../components/Profile')
 
 Vue.use(Router)
 
@@ -24,7 +28,28 @@ export default new Router({
     {
       path: '/home',
       name: 'Home',
-      component: Home
+      component: Home,
+      beforeEnter:(to,form,next) => {
+        document.title="hahha"
+        next()
+      },
+      children: [
+        // {
+        //   path:'/',
+        //   name:"news",
+        //   redirect: 'news'
+        // },
+        {
+          path:'news',
+          name:"news",
+          component:News
+        },
+        {
+          path:'message',
+          name:"message",
+          component:Message
+        }
+      ]
     },
     {
       path: '/about',
@@ -35,6 +60,11 @@ export default new Router({
       path: '/user/:userId',
       name: 'User',
       component: User
+    },
+    {
+      path: '/profile',
+      name: 'Profile',
+      component: Profile
     }
   ],
   //改变默认选中的class名字
