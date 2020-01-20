@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+<script>
+  /**
+   * resolve, reject本身还是函数
+   */
+  /*new Promise((resolve, reject) => {
+    setInterval(() => {
+      resolve()
+    },1000)
+  }).then(() => {
+    console.log("a");
+    console.log("a");
+    console.log("a");
+
+    return new Promise((resolve, reject) => {
+      setInterval(() =>{
+        resolve()
+      },1000)
+    })
+  }).then(() => {
+    console.log("b")
+    console.log("b")
+    console.log("b")
+
+    return new Promise((resolve, reject) => {
+      setInterval(() =>{
+        resolve()
+      },1000)
+    })
+  }).then(() => {
+    console.log("c")
+    console.log("c")
+    console.log("c")
+  })*/
+
+  new Promise((resolve, reject) => {
+    setTimeout(() => {
+      // resolve("成功")
+      reject("失败")
+    },1000)
+  }).then((data) => {
+    console.log(data)
+  }).catch((data) => {
+    console.log(data)
+  })
+
+</script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+<script>
+  /**
+   * promise的三种状态：
+   * pending: 初始状态，不是成功或失败状态。
+   * fulfilled: 意味着操作成功完成。
+   * rejected: 意味着操作失败。
+   */
+  new Promise((resolve, reject) => {
+    setTimeout(() => {
+      // resolve("成功")
+      reject("失败")
+    })
+  }).then((data) => {
+    console.log(data)
+  },err => {
+    console.log(err)
+  })
+</script>
+</body>
+</html>

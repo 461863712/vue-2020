@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+<script>
+  /*----------let is1 = false
+  let is2 = false
+  $.ajax({
+    url:"",
+    success:function () {
+      is1=true
+      a()
+    }
+  })
+
+  $.ajax({
+    url:"",
+    success:function () {
+      is2=true
+      a()
+    }
+  })
+
+
+  function a() {
+    if(is1 && is2){
+    //
+    }
+  }---------------------------*/
+
+  Promise.all([
+    new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve("1")
+      },1000)
+    }),
+    new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve("2")
+      },1000)
+    })
+  ]).then((result) => {
+    //result是个数组
+    console.log(result)
+  })
+</script>
+</body>
+</html>
